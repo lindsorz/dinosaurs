@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<p class="intro">Dinosaurs are a diverse group of animals, first appearing during the Triassic period, 231.4 million years ago, and were the dominant terrestrial vertebrates for 135 million years, until the Cretaceous–Paleogene event led to the mass extinction of most dinosaur groups.</p>
+	<p class="intro">Dinosaurs are a diverse group of animals, first appearing during the Triassic period, 231.4 million years ago, and were the dominant terrestrial vertebrates for 135 million years, until the Cretaceous–Paleogene event led to the mass extinction of most dinosaur groups.</p>
 	<p class="sub-intro">Although the word dinosaur means “terrible lizard”, the name is somewhat misleading, as dinosaurs are not lizards. Instead, they represent a separate group of reptiles which, like many extinct forms, did not exhibit characteristics traditionally seen as reptilian.</p>
 	
 	<h2>Herbivores vs Carnivores</h2>
@@ -10,9 +10,23 @@ layout: default
 	<div class="bucket">
 		<h3>Herbivores</h3>
 		<p>Herbivore means plant eater, short, flat teeth</p>
+		<ul>
+			{% for dino in site.pages %}
+				{% if dino.category == "herbivore" %}
+				<li>{{dino.name}}</li>
+				{% endif %}
+			{% endfor %}	
+		</ul>
 	</div>
 	
 	<div class="bucket">
 		<h3>Carnivores</h3>
 		<p>Carnivore means meat eater, long, sharp teeth</p>
+		<ul>
+			{% for dino in site.pages %}
+				{% if dino.category == "carnivore" %}
+				<li>{{dino.name}}</li>
+				{% endif %}
+			{% endfor %}	
+		</ul>
 	</div>
